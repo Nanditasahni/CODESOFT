@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    //for sending the randome number we use srand inbuild function for giving a random number;
+    srand(time(0));
+
+    int Secretnumber = rand() % 100 + 1; // set boundrise of rand function between 1 to 100;
+    int guess;
+
+    cout << "Hi everyone you are Welcome to the Number Guessing Game!" << endl;
+    cout<<"I am computer i challenged you cant guss the number"<< endl;
+    cout << "I have selected a number between 1 and 100 you have gussed right ONE!." << endl;
+
+    // it was a loop which is run untill the gussed the right number;
+    do {
+        cout << "Enter your guess: ";
+        cin >> guess;
+
+        if (guess > Secretnumber) {
+            cout << "Too high! Try again champ." << endl;
+        } else if (guess < Secretnumber) {
+            cout<<"Too low! Try Again champ."<<endl;
+        } else {
+            cout << "Congratulations! You guessed the number correctly!" << endl;
+        }
+    } while (guess != Secretnumber);
+
+    return 0;
+}
